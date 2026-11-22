@@ -1,0 +1,38 @@
+[project]
+name = "wm"
+version = "0.1.0"
+description = "Toy 2D ball env and JEPA-style latent dynamics experiments."
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "pygame>=2.5",
+    "torch>=2.11.0",
+    "tqdm>=4.67.0",
+    "matplotlib>=3.10.0",
+    "pandas>=2.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "pytest>=8.0",
+    "ruff>=0.8.0",
+]
